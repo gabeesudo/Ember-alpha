@@ -45,6 +45,8 @@ const signupSchema = z.object({
   characterName: z.string().min(1, "Nome do personagem é obrigatório").max(50),
 });
 
+const phoneSchema = z.string().regex(/^\+[1-9]\d{7,14}$/, "Use o formato internacional, como +5511999999999");
+
 type LoginForm = z.infer<typeof loginSchema>;
 type SignupForm = z.infer<typeof signupSchema>;
 
@@ -52,6 +54,9 @@ function AuthPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("login");
   const [isLoading, setIsLoading] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneCode, setPhoneCode] = useState("");
+  const [phoneCodeSent, setPhoneCodeSent] = useState(false);
 
   const loginForm = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
@@ -93,6 +98,66 @@ function AuthPage() {
       setIsLoading(false);
       toast.error(error.message);
     }
+  }
+
+  async function onPhoneSignup() {
+    const isCharacterNameValid = await signupForm.trigger("characterName");
+    if (!isCharacterNameValid) return;
+
+    const phoneResult = phoneSchema.safeParse(phoneNumber);
+    if (!phoneResult.success) {
+      toast.error(phoneResult.error.issues[0]?.message);
+      return;
+    }
+
+    setIsLoading(true);
+    const { error } = await supabase.auth.signInWithOtp({
+      phone: phoneResult.data,
+      options: {
+        data: { character_name: signupForm.getValues("characterName") },
+      },
+    });
+    setIsLoading(false);
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    setPhoneCodeSent(true);
+    toast.success("Código enviado por SMS.");
+  }
+
+  async function onPhoneCodeVerify() {
+    const isCharacterNameValid = await signupForm.trigger("characterName");
+    if (!isCharacterNameValid) return;
+
+    const phoneResult = phoneSchema.safeParse(phoneNumber);
+    if (!phoneResult.success) {
+      toast.error(phoneResult.error.issues[0]?.message);
+      return;
+    }
+
+    if (!/^\d{6}$/.test(phoneCode)) {
+      toast.error("Digite o código de 6 dígitos recebido por SMS.");
+      return;
+    }
+
+    setIsLoading(true);
+    const { error } = await supabase.auth.verifyOtp({
+      phone: phoneResult.data,
+      token: phoneCode,
+      type: "sms",
+    });
+    setIsLoading(false);
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    router.invalidate();
+    router.navigate({ to: "/dashboard" });
   }
 
   async function onSignup(values: SignupForm) {
@@ -231,6 +296,74 @@ function AuthPage() {
                     Criar conta
                   </Button>
                 </form>
+
+                <div className="relative my-5">
+                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                    <span className="w-full border-t border-border" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">ou use seu telefone</span>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-phone">Telefone</Label>
+                    <Input
+                      id="signup-phone"
+                      type="tel"
+                      inputMode="tel"
+                      placeholder="+5511999999999"
+                      value={phoneNumber}
+                      onChange={(event) => setPhoneNumber(event.target.value)}
+                      disabled={phoneCodeSent || isLoading}
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Use o formato internacional com código do país.
+                    </p>
+                  </div>
+
+                  {!phoneCodeSent ? (
+                    <Button type="button" variant="outline" className="w-full" onClick={onPhoneSignup} disabled={isLoading}>
+                      {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                      Enviar código por SMS
+                    </Button>
+                  ) : (
+                    <>
+                      <div className="space-y-2">
+                        <Label htmlFor="signup-phone-code">Código recebido</Label>
+                        <Input
+                          id="signup-phone-code"
+                          type="text"
+                          inputMode="numeric"
+                          autoComplete="one-time-code"
+                          maxLength={6}
+                          placeholder="000000"
+                          value={phoneCode}
+                          onChange={(event) => setPhoneCode(event.target.value.replace(/\D/g, ""))}
+                          disabled={isLoading}
+                        />
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <Button type="button" onClick={onPhoneCodeVerify} disabled={isLoading}>
+                          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                          Confirmar código
+                        </Button>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => {
+                            setPhoneCodeSent(false);
+                            setPhoneCode("");
+                          }}
+                          disabled={isLoading}
+                        >
+                          Trocar número
+                        </Button>
+                      </div>
+                    </>
+                  )}
+                </div>
               </TabsContent>
             </Tabs>
 
