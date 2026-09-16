@@ -91,7 +91,7 @@ export function GlassDesktop({
       <footer className="glass-taskbar">
         <button className="glass-start" onClick={() => setAbout(true)}>
           <Flame />
-          <strong>kaizen</strong>
+          <strong style={{ fontFamily: "Borel, sans-serif" }}>kaizen</strong>
         </button>
         <span className="glass-taskbar-divider" />
         <span className="glass-running-app">
