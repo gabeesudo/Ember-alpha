@@ -13,6 +13,11 @@ export default defineConfig(({ mode, command }) => {
   }
   return {
     resolve: { tsconfigPaths: true, dedupe: ["react", "react-dom"] },
-    plugins: [tailwindcss(), tanstackStart({ server: { entry: "server" } }), nitro({ preset: "node-server" }), react()],
+    plugins: [
+      tailwindcss(),
+      tanstackStart({ server: { entry: "server" } }),
+      nitro({ preset: "node-server" }),
+      react(),
+    ],
   };
 });

@@ -23,7 +23,10 @@ export const Route = createFileRoute("/_authenticated/character")({
       { title: "Personagem — Kaizen" },
       { name: "description", content: "Veja e evolua os atributos do seu personagem no Kaizen." },
       { property: "og:title", content: "Personagem — Kaizen" },
-      { property: "og:description", content: "Veja e evolua os atributos do seu personagem no Kaizen." },
+      {
+        property: "og:description",
+        content: "Veja e evolua os atributos do seu personagem no Kaizen.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -32,11 +35,31 @@ export const Route = createFileRoute("/_authenticated/character")({
 });
 
 const attributes = [
-  { key: "strength", label: "Força", icon: Dumbbell, description: "Resistência física e determinação" },
-  { key: "intelligence", label: "Inteligência", icon: Brain, description: "Aprendizado e raciocínio" },
+  {
+    key: "strength",
+    label: "Força",
+    icon: Dumbbell,
+    description: "Resistência física e determinação",
+  },
+  {
+    key: "intelligence",
+    label: "Inteligência",
+    icon: Brain,
+    description: "Aprendizado e raciocínio",
+  },
   { key: "discipline", label: "Disciplina", icon: Target, description: "Foco e consistência" },
-  { key: "creativity", label: "Criatividade", icon: Lightbulb, description: "Inovação e resolução de problemas" },
-  { key: "resilience", label: "Resiliência", icon: Heart, description: "Capacidade de superar obstáculos" },
+  {
+    key: "creativity",
+    label: "Criatividade",
+    icon: Lightbulb,
+    description: "Inovação e resolução de problemas",
+  },
+  {
+    key: "resilience",
+    label: "Resiliência",
+    icon: Heart,
+    description: "Capacidade de superar obstáculos",
+  },
 ] as const;
 
 function CharacterPage() {
@@ -65,7 +88,9 @@ function CharacterPage() {
     <div className="space-y-6 feature-page">
       <div>
         <h1 className="text-2xl font-bold text-foreground">{profile.character_name}</h1>
-        <p className="text-muted-foreground">Nível {profile.level} · {profile.xp}/{nextLevelXp} XP</p>
+        <p className="text-muted-foreground">
+          Nível {profile.level} · {profile.xp}/{nextLevelXp} XP
+        </p>
       </div>
 
       <Card>
@@ -76,11 +101,19 @@ function CharacterPage() {
             </div>
             <div className="flex-1">
               <div className="feature-heading flex flex-wrap items-center justify-between gap-3">
-                <p className="text-sm font-medium text-muted-foreground">Progresso para o nível {profile.level + 1}</p>
+                <p className="text-sm font-medium text-muted-foreground">
+                  Progresso para o nível {profile.level + 1}
+                </p>
                 <span className="text-sm font-bold text-primary">{xpProgress}%</span>
               </div>
-              <Progress aria-label="Progresso de experiência" value={xpProgress} className="mt-2 h-3" />
-              <p className="mt-2 text-sm text-muted-foreground">Faltam {nextLevelXp - profile.xp} XP</p>
+              <Progress
+                aria-label="Progresso de experiência"
+                value={xpProgress}
+                className="mt-2 h-3"
+              />
+              <p className="mt-2 text-sm text-muted-foreground">
+                Faltam {nextLevelXp - profile.xp} XP
+              </p>
             </div>
           </div>
         </CardContent>
@@ -90,7 +123,8 @@ function CharacterPage() {
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-base">Atributos</CardTitle>
           <div className="text-sm text-muted-foreground">
-            Pontos disponíveis: <span className="font-bold text-primary">{profile.attribute_points}</span>
+            Pontos disponíveis:{" "}
+            <span className="font-bold text-primary">{profile.attribute_points}</span>
           </div>
         </CardHeader>
         <CardContent>

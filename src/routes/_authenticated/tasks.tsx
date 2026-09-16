@@ -11,8 +11,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
@@ -149,15 +161,26 @@ function TasksPage() {
               <div className="space-y-2">
                 <Label htmlFor="title">Título</Label>
                 <Input id="title" {...form.register("title")} placeholder="Ex: Ler 20 páginas" />
-                {form.formState.errors.title && <p className="text-xs text-destructive">{form.formState.errors.title.message}</p>}
+                {form.formState.errors.title && (
+                  <p className="text-xs text-destructive">{form.formState.errors.title.message}</p>
+                )}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="description">Descrição</Label>
-                <Textarea id="description" {...form.register("description")} placeholder="Detalhes da missão (opcional)" />
+                <Textarea
+                  id="description"
+                  {...form.register("description")}
+                  placeholder="Detalhes da missão (opcional)"
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="difficulty">Dificuldade</Label>
-                <Select value={form.watch("difficulty")} onValueChange={(value) => form.setValue("difficulty", value as TaskForm["difficulty"])}>
+                <Select
+                  value={form.watch("difficulty")}
+                  onValueChange={(value) =>
+                    form.setValue("difficulty", value as TaskForm["difficulty"])
+                  }
+                >
                   <SelectTrigger id="difficulty">
                     <SelectValue />
                   </SelectTrigger>
@@ -182,8 +205,19 @@ function TasksPage() {
         </Dialog>
       </div>
 
-      <TaskList title="Pendentes" tasks={pendingTasks} onComplete={handleComplete} onDelete={handleDelete} showActions />
-      <TaskList title="Concluídas" tasks={completedTasks} onComplete={() => {}} onDelete={handleDelete} />
+      <TaskList
+        title="Pendentes"
+        tasks={pendingTasks}
+        onComplete={handleComplete}
+        onDelete={handleDelete}
+        showActions
+      />
+      <TaskList
+        title="Concluídas"
+        tasks={completedTasks}
+        onComplete={() => {}}
+        onDelete={handleDelete}
+      />
     </div>
   );
 }
@@ -219,24 +253,40 @@ function TaskList({
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <p className={`font-medium ${task.completed ? "line-through" : ""}`}>{task.title}</p>
+                      <p className={`font-medium ${task.completed ? "line-through" : ""}`}>
+                        {task.title}
+                      </p>
                       <Badge className={difficultyColors[task.difficulty]} variant="secondary">
                         {difficultyLabels[task.difficulty]}
                       </Badge>
                     </div>
-                    {task.description && <p className="mt-1 text-sm text-muted-foreground">{task.description}</p>}
+                    {task.description && (
+                      <p className="mt-1 text-sm text-muted-foreground">{task.description}</p>
+                    )}
                     <p className="mt-2 text-xs text-muted-foreground">
                       +{task.xp_reward} XP · +{task.coin_reward} moedas
-                      {task.due_date ? ` · Vence em ${new Date(task.due_date + "T12:00:00").toLocaleDateString("pt-BR")}` : ""}
+                      {task.due_date
+                        ? ` · Vence em ${new Date(task.due_date + "T12:00:00").toLocaleDateString("pt-BR")}`
+                        : ""}
                     </p>
                   </div>
                   <div className="flex shrink-0 gap-2">
                     {showActions && !task.completed && (
-                      <Button size="icon" variant="outline" aria-label="Completar" onClick={() => onComplete(task.id)}>
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        aria-label="Completar"
+                        onClick={() => onComplete(task.id)}
+                      >
                         <CheckCircle2 className="h-4 w-4" />
                       </Button>
                     )}
-                    <Button size="icon" variant="ghost" aria-label="Excluir" onClick={() => onDelete(task.id)}>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      aria-label="Excluir"
+                      onClick={() => onDelete(task.id)}
+                    >
                       <Trash2 className="h-4 w-4 text-destructive" />
                     </Button>
                   </div>

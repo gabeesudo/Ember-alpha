@@ -48,7 +48,7 @@ export const createTask = createServerFn({ method: "POST" })
         difficulty: z.enum(["easy", "medium", "hard", "epic"]),
         dueDate: z.string().optional().nullable(),
       })
-      .parse(data)
+      .parse(data),
   )
   .handler(async ({ data, context }) => {
     const rewards = DIFFICULTY_REWARDS[data.difficulty];
@@ -80,7 +80,26 @@ export const completeTask = createServerFn({ method: "POST" })
     });
 
     if (error) throw error;
-    return result as { success: boolean; error?: string; xp_gained?: number; coins_gained?: number; levels_gained?: number; profile?: { id: string; character_name: string; level: number; xp: number; coins: number; attribute_points: number; strength: number; intelligence: number; discipline: number; creativity: number; resilience: number } };
+    return result as {
+      success: boolean;
+      error?: string;
+      xp_gained?: number;
+      coins_gained?: number;
+      levels_gained?: number;
+      profile?: {
+        id: string;
+        character_name: string;
+        level: number;
+        xp: number;
+        coins: number;
+        attribute_points: number;
+        strength: number;
+        intelligence: number;
+        discipline: number;
+        creativity: number;
+        resilience: number;
+      };
+    };
   });
 
 export const deleteTask = createServerFn({ method: "POST" })

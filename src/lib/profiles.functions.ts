@@ -32,12 +32,34 @@ export const updateCharacterName = createServerFn({ method: "POST" })
 
 export const spendAttributePoint = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data) => z.object({ attribute: z.enum(["strength", "intelligence", "discipline", "creativity", "resilience"]) }).parse(data))
+  .inputValidator((data) =>
+    z
+      .object({
+        attribute: z.enum(["strength", "intelligence", "discipline", "creativity", "resilience"]),
+      })
+      .parse(data),
+  )
   .handler(async ({ data, context }) => {
     const { data: result, error } = await context.supabase.rpc("spend_attribute_point", {
       _attribute: data.attribute,
     });
 
     if (error) throw error;
-    return result as { success: boolean; error?: string; profile?: { id: string; character_name: string; level: number; xp: number; coins: number; attribute_points: number; strength: number; intelligence: number; discipline: number; creativity: number; resilience: number } };
+    return result as {
+      success: boolean;
+      error?: string;
+      profile?: {
+        id: string;
+        character_name: string;
+        level: number;
+        xp: number;
+        coins: number;
+        attribute_points: number;
+        strength: number;
+        intelligence: number;
+        discipline: number;
+        creativity: number;
+        resilience: number;
+      };
+    };
   });

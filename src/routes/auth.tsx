@@ -23,7 +23,10 @@ export const Route = createFileRoute("/auth")({
       { title: "Entrar — Kaizen" },
       { name: "description", content: "Entre ou cadastre-se no Kaizen para começar sua aventura." },
       { property: "og:title", content: "Entrar — Kaizen" },
-      { property: "og:description", content: "Entre ou cadastre-se no Kaizen para começar sua aventura." },
+      {
+        property: "og:description",
+        content: "Entre ou cadastre-se no Kaizen para começar sua aventura.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -115,94 +118,131 @@ function AuthPage() {
 
   return (
     <div className="desktop auth-desktop">
-      <EmberBar/>
+      <EmberBar />
 
       <div className="auth-workspace">
-        <div className="os-window auth-window"><WindowTitle code="02">Acesso ao sistema</WindowTitle><div className="auth-content">
-          <div className="mb-6 text-center auth-heading">
-            <Flame className="auth-flame"/><h1 className="text-2xl font-bold text-card-foreground">Continue sua jornada</h1>
-            <p className="mt-2 text-sm text-muted-foreground">Entre para continuar sua jornada.</p>
-          </div>
+        <div className="os-window auth-window">
+          <WindowTitle code="02">Acesso ao sistema</WindowTitle>
+          <div className="auth-content">
+            <div className="mb-6 text-center auth-heading">
+              <Flame className="auth-flame" />
+              <h1 className="text-2xl font-bold text-card-foreground">Continue sua jornada</h1>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Entre para continuar sua jornada.
+              </p>
+            </div>
 
-          <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="login">Entrar</TabsTrigger>
-              <TabsTrigger value="signup">Criar conta</TabsTrigger>
-            </TabsList>
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="login">Entrar</TabsTrigger>
+                <TabsTrigger value="signup">Criar conta</TabsTrigger>
+              </TabsList>
 
-            <TabsContent value="login">
-              <form onSubmit={loginForm.handleSubmit(onLogin)} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="login-email">Email</Label>
-                  <Input id="login-email" type="email" {...loginForm.register("email")} />
-                  {loginForm.formState.errors.email && (
-                    <p className="text-xs text-destructive">{loginForm.formState.errors.email.message}</p>
-                  )}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="login-password">Senha</Label>
-                  <Input id="login-password" type="password" {...loginForm.register("password")} />
-                  {loginForm.formState.errors.password && (
-                    <p className="text-xs text-destructive">{loginForm.formState.errors.password.message}</p>
-                  )}
-                </div>
-                <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Entrar
-                </Button>
-                <div className="relative py-1">
-                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <span className="w-full border-t border-border" />
+              <TabsContent value="login">
+                <form onSubmit={loginForm.handleSubmit(onLogin)} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="login-email">Email</Label>
+                    <Input id="login-email" type="email" {...loginForm.register("email")} />
+                    {loginForm.formState.errors.email && (
+                      <p className="text-xs text-destructive">
+                        {loginForm.formState.errors.email.message}
+                      </p>
+                    )}
                   </div>
-                  <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-card px-2 text-muted-foreground">ou</span>
+                  <div className="space-y-2">
+                    <Label htmlFor="login-password">Senha</Label>
+                    <Input
+                      id="login-password"
+                      type="password"
+                      {...loginForm.register("password")}
+                    />
+                    {loginForm.formState.errors.password && (
+                      <p className="text-xs text-destructive">
+                        {loginForm.formState.errors.password.message}
+                      </p>
+                    )}
                   </div>
-                </div>
-                <Button type="button" variant="outline" className="w-full" onClick={onGoogleLogin} disabled={isLoading}>
-                  <span className="font-bold" aria-hidden="true">G</span>
-                  Continuar com Google
-                </Button>
-              </form>
-            </TabsContent>
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    Entrar
+                  </Button>
+                  <div className="relative py-1">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                      <span className="w-full border-t border-border" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-card px-2 text-muted-foreground">ou</span>
+                    </div>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="w-full"
+                    onClick={onGoogleLogin}
+                    disabled={isLoading}
+                  >
+                    <span className="font-bold" aria-hidden="true">
+                      G
+                    </span>
+                    Continuar com Google
+                  </Button>
+                </form>
+              </TabsContent>
 
-            <TabsContent value="signup">
-              <form onSubmit={signupForm.handleSubmit(onSignup)} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="signup-character">Nome do personagem</Label>
-                  <Input id="signup-character" {...signupForm.register("characterName")} placeholder="Ex: Aragorn das Tarefas" />
-                  {signupForm.formState.errors.characterName && (
-                    <p className="text-xs text-destructive">{signupForm.formState.errors.characterName.message}</p>
-                  )}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="signup-email">Email</Label>
-                  <Input id="signup-email" type="email" {...signupForm.register("email")} />
-                  {signupForm.formState.errors.email && (
-                    <p className="text-xs text-destructive">{signupForm.formState.errors.email.message}</p>
-                  )}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="signup-password">Senha</Label>
-                  <Input id="signup-password" type="password" {...signupForm.register("password")} />
-                  {signupForm.formState.errors.password && (
-                    <p className="text-xs text-destructive">{signupForm.formState.errors.password.message}</p>
-                  )}
-                </div>
-                <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Criar conta
-                </Button>
-              </form>
-            </TabsContent>
-          </Tabs>
+              <TabsContent value="signup">
+                <form onSubmit={signupForm.handleSubmit(onSignup)} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-character">Nome do personagem</Label>
+                    <Input
+                      id="signup-character"
+                      {...signupForm.register("characterName")}
+                      placeholder="Ex: Aragorn das Tarefas"
+                    />
+                    {signupForm.formState.errors.characterName && (
+                      <p className="text-xs text-destructive">
+                        {signupForm.formState.errors.characterName.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-email">Email</Label>
+                    <Input id="signup-email" type="email" {...signupForm.register("email")} />
+                    {signupForm.formState.errors.email && (
+                      <p className="text-xs text-destructive">
+                        {signupForm.formState.errors.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-password">Senha</Label>
+                    <Input
+                      id="signup-password"
+                      type="password"
+                      {...signupForm.register("password")}
+                    />
+                    {signupForm.formState.errors.password && (
+                      <p className="text-xs text-destructive">
+                        {signupForm.formState.errors.password.message}
+                      </p>
+                    )}
+                  </div>
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    Criar conta
+                  </Button>
+                </form>
+              </TabsContent>
+            </Tabs>
 
-          <div className="mt-6 text-center text-sm text-muted-foreground">
-            <Link to="/" className="text-primary hover:underline">
-              Voltar ao início
-            </Link>
+            <div className="mt-6 text-center text-sm text-muted-foreground">
+              <Link to="/" className="text-primary hover:underline">
+                Voltar ao início
+              </Link>
+            </div>
           </div>
-        </div></div>
-      </div><EmberStatus/>
+        </div>
+      </div>
+      <EmberStatus />
     </div>
   );
 }
