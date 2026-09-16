@@ -1,0 +1,261 @@
+.pw-scene {
+  position: relative;
+  width: min(100%, 300px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  isolation: isolate;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.pw-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  image-rendering: pixelated;
+  cursor: inherit;
+  outline: none;
+}
+
+.pw-scene:focus-within .pw-canvas {
+  outline: 2px dotted #3e7665;
+  outline-offset: 5px;
+}
+
+.pw-dragging,
+.pw-dragging .pw-canvas {
+  cursor: grabbing;
+}
+
+.pw-rotate-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  padding: 2px 6px;
+  color: #4b7063;
+  background: rgba(245, 255, 248, 0.72);
+  border: 1px solid rgba(78, 126, 105, 0.2);
+  border-radius: 3px;
+  font:
+    7px/1.35 "Cascadia Mono",
+    "Lucida Console",
+    monospace;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.pw-reset {
+  position: absolute;
+  top: 22px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(78, 126, 105, 0.28);
+  border-radius: 3px;
+  background: rgba(245, 255, 248, 0.65);
+  color: #3e7665;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.65;
+  cursor: pointer;
+}
+
+.pw-reset:hover,
+.pw-reset:focus-visible {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.pw-island {
+  animation: pw-float 5s ease-in-out infinite;
+}
+
+.pw-character {
+  animation: pw-breathe 3.2s steps(6, end) infinite;
+  transform-origin: 131px 182px;
+}
+
+.pw-scarf {
+  transform-origin: 111px 99px;
+  animation: pw-wind 3.2s steps(6, end) infinite;
+}
+
+.pw-head {
+  transform-origin: 131px 94px;
+  animation: pw-look 9s steps(2, end) infinite;
+}
+
+.pw-ground-shadow {
+  transform-origin: 132px 236px;
+  animation: pw-shadow 5s ease-in-out infinite;
+}
+
+.pw-spark {
+  opacity: 0;
+  animation: pw-drift 4.8s steps(12, end) infinite;
+}
+
+.pw-spark-two {
+  animation-delay: 1.2s;
+}
+
+.pw-spark-three {
+  animation-delay: 2.4s;
+}
+
+.pw-spark-four {
+  animation-delay: 3.6s;
+}
+
+.pw-glint {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pw-twinkle 5s steps(4, end) infinite;
+}
+
+.pw-glint-late {
+  animation-delay: 2.5s;
+}
+
+.pw-celebrating .pw-character {
+  animation: pw-victory 700ms steps(8, end) 2;
+}
+
+.pw-celebrating .pw-sword {
+  transform-origin: 161px 140px;
+  animation: pw-salute 1.4s steps(8, end) 1;
+}
+
+.pw-celebrating .pw-spark {
+  animation-duration: 1.2s;
+}
+
+@keyframes pw-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pw-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pw-wind {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(5deg) translateX(-2px);
+  }
+}
+
+@keyframes pw-look {
+  0%,
+  65%,
+  100% {
+    transform: translateX(0);
+  }
+  70%,
+  90% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes pw-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(0.9);
+    opacity: 0.65;
+  }
+}
+
+@keyframes pw-drift {
+  0% {
+    opacity: 0;
+    transform: translate(0, 8px);
+  }
+  20% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(5px, -20px);
+  }
+}
+
+@keyframes pw-twinkle {
+  0%,
+  62%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70%,
+  78% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  88% {
+    opacity: 0.3;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes pw-victory {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  35%,
+  50% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes pw-salute {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25%,
+  75% {
+    transform: rotate(-14deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pw-scene * {
+    animation: none;
+  }
+
+  .pw-spark,
+  .pw-glint {
+    opacity: 0.5;
+  }
+}
