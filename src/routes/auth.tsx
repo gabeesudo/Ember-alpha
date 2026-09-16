@@ -59,6 +59,9 @@ function AuthPage() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneCode, setPhoneCode] = useState("");
   const [phoneCodeSent, setPhoneCodeSent] = useState(false);
+  const [loginPhoneNumber, setLoginPhoneNumber] = useState("");
+  const [loginPhoneCode, setLoginPhoneCode] = useState("");
+  const [loginPhoneCodeSent, setLoginPhoneCodeSent] = useState(false);
 
   const loginForm = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
@@ -100,6 +103,55 @@ function AuthPage() {
       setIsLoading(false);
       toast.error(error.message);
     }
+  }
+
+  async function onPhoneLogin() {
+    const phoneResult = phoneSchema.safeParse(loginPhoneNumber);
+    if (!phoneResult.success) {
+      toast.error(phoneResult.error.issues[0]?.message);
+      return;
+    }
+
+    setIsLoading(true);
+    const { error } = await supabase.auth.signInWithOtp({ phone: phoneResult.data });
+    setIsLoading(false);
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    setLoginPhoneCodeSent(true);
+    toast.success("Código enviado por SMS.");
+  }
+
+  async function onPhoneLoginVerify() {
+    const phoneResult = phoneSchema.safeParse(loginPhoneNumber);
+    if (!phoneResult.success) {
+      toast.error(phoneResult.error.issues[0]?.message);
+      return;
+    }
+
+    if (!/^\d{6}$/.test(loginPhoneCode)) {
+      toast.error("Digite o código de 6 dígitos recebido por SMS.");
+      return;
+    }
+
+    setIsLoading(true);
+    const { error } = await supabase.auth.verifyOtp({
+      phone: phoneResult.data,
+      token: loginPhoneCode,
+      type: "sms",
+    });
+    setIsLoading(false);
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    router.invalidate();
+    router.navigate({ to: "/dashboard" });
   }
 
   async function onPhoneSignup() {
@@ -253,6 +305,71 @@ function AuthPage() {
                     </span>
                     Continuar com Google
                   </Button>
+
+                  <div className="relative py-1">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                      <span className="w-full border-t border-border" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-card px-2 text-muted-foreground">ou entre com telefone</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="login-phone">Telefone</Label>
+                      <Input
+                        id="login-phone"
+                        type="tel"
+                        inputMode="tel"
+                        placeholder="+5511999999999"
+                        value={loginPhoneNumber}
+                        onChange={(event) => setLoginPhoneNumber(event.target.value)}
+                        disabled={loginPhoneCodeSent || isLoading}
+                      />
+                    </div>
+
+                    {!loginPhoneCodeSent ? (
+                      <Button type="button" variant="outline" className="w-full" onClick={onPhoneLogin} disabled={isLoading}>
+                        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                        Enviar código por SMS
+                      </Button>
+                    ) : (
+                      <>
+                        <div className="space-y-2">
+                          <Label htmlFor="login-phone-code">Código recebido</Label>
+                          <Input
+                            id="login-phone-code"
+                            type="text"
+                            inputMode="numeric"
+                            autoComplete="one-time-code"
+                            maxLength={6}
+                            placeholder="000000"
+                            value={loginPhoneCode}
+                            onChange={(event) => setLoginPhoneCode(event.target.value.replace(/\D/g, ""))}
+                            disabled={isLoading}
+                          />
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <Button type="button" onClick={onPhoneLoginVerify} disabled={isLoading}>
+                            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                            Confirmar código
+                          </Button>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            onClick={() => {
+                              setLoginPhoneCodeSent(false);
+                              setLoginPhoneCode("");
+                            }}
+                            disabled={isLoading}
+                          >
+                            Trocar número
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </form>
               </TabsContent>
 
