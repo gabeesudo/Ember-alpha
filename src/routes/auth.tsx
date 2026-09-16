@@ -45,7 +45,9 @@ const signupSchema = z.object({
   characterName: z.string().min(1, "Nome do personagem é obrigatório").max(50),
 });
 
-const phoneSchema = z.string().regex(/^\+[1-9]\d{7,14}$/, "Use o formato internacional, como +5511999999999");
+const phoneSchema = z
+  .string()
+  .regex(/^\+[1-9]\d{7,14}$/, "Use o formato internacional, como +5511999999999");
 
 type LoginForm = z.infer<typeof loginSchema>;
 type SignupForm = z.infer<typeof signupSchema>;
@@ -324,7 +326,13 @@ function AuthPage() {
                   </div>
 
                   {!phoneCodeSent ? (
-                    <Button type="button" variant="outline" className="w-full" onClick={onPhoneSignup} disabled={isLoading}>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full"
+                      onClick={onPhoneSignup}
+                      disabled={isLoading}
+                    >
                       {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                       Enviar código por SMS
                     </Button>
