@@ -77,6 +77,21 @@ function AuthPage() {
     router.navigate({ to: "/dashboard" });
   }
 
+  async function onGoogleLogin() {
+    setIsLoading(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth`,
+      },
+    });
+
+    if (error) {
+      setIsLoading(false);
+      toast.error(error.message);
+    }
+  }
+
   async function onSignup(values: SignupForm) {
     setIsLoading(true);
     const { error } = await supabase.auth.signUp({
@@ -134,6 +149,18 @@ function AuthPage() {
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   Entrar
+                </Button>
+                <div className="relative py-1">
+                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                    <span className="w-full border-t border-border" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">ou</span>
+                  </div>
+                </div>
+                <Button type="button" variant="outline" className="w-full" onClick={onGoogleLogin} disabled={isLoading}>
+                  <span className="font-bold" aria-hidden="true">G</span>
+                  Continuar com Google
                 </Button>
               </form>
             </TabsContent>
