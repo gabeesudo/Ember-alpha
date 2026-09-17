@@ -24,6 +24,11 @@ export default defineConfig(({ mode, command }) => {
         "@plasmicapp/react-web",
       ],
     },
-    plugins: [tailwindcss(), tanstackStart({ server: { entry: "server" } }), nitro({ preset: "node-server" }), react()],
+    plugins: [
+      tailwindcss(),
+      tanstackStart({ server: { entry: "server" } }),
+      nitro({ preset: process.env["VERCEL"] === "1" ? "vercel" : "node-server" }),
+      react(),
+    ],
   };
 });

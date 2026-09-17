@@ -75,6 +75,21 @@ runs or Plasmic `repository_dispatch` events. Add a repository secret named
 `PLASMIC_AUTH_JSON` containing the JSON from your local `.plasmic.auth` file;
 the file itself and project API tokens are intentionally not committed.
 
+### Vercel deployment
+
+Import `gabeesudo/Ember-alpha` into Vercel and deploy the `main` branch. The
+repository sets the TanStack Start framework and npm build commands in
+`vercel.json`. Nitro uses the Vercel preset when Vercel's `VERCEL` environment
+variable is present, and the standalone Node server preset for local builds.
+
+Before deploying, set `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`,
+`SUPABASE_URL`, and `SUPABASE_PUBLISHABLE_KEY` in the Vercel project's Production
+and Preview environments, using the same Supabase project as the local app.
+After deployment, set the Plasmic project's custom app host to
+`https://YOUR-PRODUCTION-DOMAIN/plasmic-host`. Verify this URL is accessible to
+Plasmic Studio; a deployment behind Vercel authentication cannot serve as its
+public app host.
+
 ## Ember Glass dashboard
 
 The authenticated dashboard blends translucent sage glass with classic desktop
