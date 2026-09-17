@@ -1,0 +1,59 @@
+.TextInput__ariaInput__eZyha.__wab_instance {
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 0px 1px var(--token-X64augPux8O1);
+  color: var(--token-0m05gj3N2eiL);
+  font-family: var(--token-KTY_WjyPLaCB);
+  font-size: var(--token-c6_OyUg6gWzv);
+  line-height: var(--token-RrsTQzwYD6Gx);
+  width: 100%;
+  position: relative;
+  outline-style: none;
+  min-width: 0;
+  border-radius: var(--token-kC939s-i084Z);
+  padding: var(--token-kC939s-i084Z) var(--token-s8aSZg9_lN-7);
+  border-style: none;
+}
+.TextInput__ariaInput__eZyha[data-disabled][data-disabled].__wab_instance {
+  cursor: not-allowed;
+}
+.TextInput__ariaInput__eZyha[data-focused][data-focused].__wab_instance {
+  outline-style: solid;
+  outline-width: var(--token-MdgXwPos-MDU);
+  outline-offset: 1px;
+  outline-color: var(--token-3hJejzQjhI5V);
+}
+.TextInput__ariaInputtype_soft__eZyhaybeWf.__wab_instance {
+  background: var(--token-kEXtVWOe61Ti);
+  box-shadow: none;
+}
+.TextInput__ariaInputtype_soft__eZyhaybeWf[data-hovered][data-hovered].__wab_instance {
+  background: var(--token-o9YNtTBYOIC9);
+}
+.TextInput__ariaInputtype_plain__eZyha70S6F.__wab_instance {
+  box-shadow: none;
+}
+.TextInput__ariaInputtype_plain__eZyha70S6F[data-hovered][data-hovered].__wab_instance {
+  background: var(--token-kEXtVWOe61Ti);
+}
+.TextInput__ariaInputflat_top__eZyhaF34Ot.__wab_instance {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+}
+.TextInput__ariaInputflat_right__eZyhaYldGh.__wab_instance {
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+.TextInput__ariaInputflat_bottom__eZyhaVuGt1.__wab_instance {
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+.TextInput__ariaInputflat_left__eZyhahPdD.__wab_instance {
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+}
+.TextInput__ariaInputpadded_left__eZyhapSz0Q.__wab_instance {
+  padding-left: var(--token-2_jb4RbyOyDV);
+}
+.TextInput__ariaInputpadded_right__eZyhaRDl4U.__wab_instance {
+  padding-right: var(--token-2_jb4RbyOyDV);
+}

@@ -1,0 +1,35 @@
+.Tooltip__ariaTooltip__eYh42.__wab_instance {
+  box-sizing: border-box;
+  position: relative;
+  color: #ffffff;
+}
+.Tooltip__slotTargetTrigger__lAhs5 {
+  color: var(--token-0m05gj3N2eiL);
+  font-family: var(--token-KTY_WjyPLaCB);
+  font-size: var(--token-c6_OyUg6gWzv);
+  line-height: var(--token-RrsTQzwYD6Gx);
+}
+.Tooltip__text__nIaec {
+  position: relative;
+}
+.Tooltip__overlayArrow__oCwSw.__wab_instance.__wab_instance {
+  max-width: 100%;
+}
+.Tooltip__freeBox__pdclQ {
+  display: flex;
+  position: relative;
+  background: var(--token-pUXeQxuiLtLb);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: auto;
+  row-gap: var(--token-Sw5oQ-n44CSr);
+  border-radius: var(--token-GXoVliIWq2sa);
+  padding: var(--token-6nS2v1GnJAaY);
+}
+.Tooltip__slotTargetContent__mg7Jf {
+  color: var(--token-LeSa1aW5yStm);
+  font-family: var(--token-KTY_WjyPLaCB);
+  font-size: var(--token-c6_OyUg6gWzv);
+  line-height: var(--token-RrsTQzwYD6Gx);
+}

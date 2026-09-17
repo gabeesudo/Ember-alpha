@@ -1,0 +1,41 @@
+.CheckboxGroup__ariaCheckboxGroup___1U8F.__wab_instance {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  row-gap: var(--token-Sw5oQ-n44CSr);
+  min-width: 0;
+}
+.CheckboxGroup__ariaCheckboxGroup___1U8F[data-disabled][data-disabled].__wab_instance {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.CheckboxGroup__ariaCheckboxGroup___1U8F[data-readonly][data-readonly].__wab_instance {
+  pointer-events: none;
+  cursor: default;
+}
+.CheckboxGroup__label__skpQp.__wab_instance.__wab_instance {
+  position: relative;
+}
+.CheckboxGroup__freeBox___1E95M {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--token-Sw5oQ-n44CSr);
+}
+.CheckboxGroup__checkbox___0Zhe1.__wab_instance.__wab_instance {
+  max-width: 100%;
+}
+.CheckboxGroup__checkbox__izMxc.__wab_instance.__wab_instance {
+  max-width: 100%;
+  position: relative;
+}
+.CheckboxGroup__checkbox__l6QBd.__wab_instance.__wab_instance {
+  max-width: 100%;
+  position: relative;
+}
+.CheckboxGroup__description__oxTpk.__wab_instance.__wab_instance {
+  position: relative;
+}

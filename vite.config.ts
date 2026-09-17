@@ -13,6 +13,17 @@ export default defineConfig(({ mode, command }) => {
   }
   return {
     resolve: { tsconfigPaths: true, dedupe: ["react", "react-dom"] },
+    ssr: {
+      noExternal: [
+        /^@plasmicpkgs\//,
+        /^@plasmicapp\/host/,
+        "@plasmicapp/data-sources",
+        "@plasmicapp/data-sources-context",
+        "@plasmicapp/prepass",
+        "@plasmicapp/query",
+        "@plasmicapp/react-web",
+      ],
+    },
     plugins: [tailwindcss(), tanstackStart({ server: { entry: "server" } }), nitro({ preset: "node-server" }), react()],
   };
 });

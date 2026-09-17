@@ -17,7 +17,7 @@ export const Route = createFileRoute("/design")({
   component: DesignPreview,
 });
 
-function sampleProfile(): PlayerProfile {
+export function sampleProfile(): PlayerProfile {
   const timestamp = new Date().toISOString();
   return {
     id: "preview-player",
@@ -37,7 +37,7 @@ function sampleProfile(): PlayerProfile {
   };
 }
 
-function sampleQuests(): Quest[] {
+export function sampleQuests(): Quest[] {
   const today = new Date();
   const rows: Array<{
     title: string;

@@ -1,0 +1,23 @@
+.OverlayArrow__root___3WYz.__wab_instance {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.OverlayArrow__svg__mgt1J {
+  color: var(--token-BOdkXmlW41EE);
+  width: 10px;
+  height: 10px;
+  transform: translate3d(0px, 3px, 0px);
+}
+.OverlayArrow__root___3WYz[data-placement="top"] .OverlayArrow__svg__mgt1J {
+  transform: translate3d(0px, -3px, 0px) rotate3d(0, 0, 1, 180deg);
+}
+.OverlayArrow__root___3WYz[data-placement="left"] .OverlayArrow__svg__mgt1J {
+  transform: translate3d(-3px, 0px, 0px) rotate3d(0, 0, 1, 90deg);
+}
+.OverlayArrow__root___3WYz[data-placement="right"] .OverlayArrow__svg__mgt1J {
+  transform: translate3d(3px, 0px, 0px) rotate3d(0, 0, 1, -90deg);
+}
+.OverlayArrow__svgdark__mgt1Jz1Lbo {
+  color: var(--token-pUXeQxuiLtLb);
+}

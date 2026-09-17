@@ -1,0 +1,59 @@
+.TextAreaInput__ariaTextArea__yB06Y.__wab_instance {
+  box-sizing: border-box;
+  object-fit: cover;
+  position: relative;
+  box-shadow: inset 0px 0px 0px 1px var(--token-X64augPux8O1);
+  font-size: var(--token-c6_OyUg6gWzv);
+  line-height: var(--token-RrsTQzwYD6Gx);
+  width: 100%;
+  color: var(--token-0m05gj3N2eiL);
+  font-family: var(--token-KTY_WjyPLaCB);
+  min-width: 0;
+  border-radius: var(--token-kC939s-i084Z);
+  padding: var(--token-kC939s-i084Z) var(--token-s8aSZg9_lN-7);
+  border-style: none;
+}
+.TextAreaInput__ariaTextArea__yB06Y[data-focused][data-focused].__wab_instance {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--token-3hJejzQjhI5V);
+  outline-offset: 1px;
+}
+.TextAreaInput__ariaTextArea__yB06Y[data-disabled][data-disabled].__wab_instance {
+  cursor: not-allowed;
+}
+.TextAreaInput__ariaTextAreatype_soft__yB06YV3M3.__wab_instance {
+  background: var(--token-kEXtVWOe61Ti);
+  box-shadow: none;
+}
+.TextAreaInput__ariaTextAreatype_soft__yB06YV3M3[data-hovered][data-hovered].__wab_instance {
+  background: var(--token-o9YNtTBYOIC9);
+}
+.TextAreaInput__ariaTextAreatype_plain__yB06Ya1C7P.__wab_instance {
+  box-shadow: none;
+}
+.TextAreaInput__ariaTextAreatype_plain__yB06Ya1C7P[data-hovered][data-hovered].__wab_instance {
+  background: var(--token-kEXtVWOe61Ti);
+}
+.TextAreaInput__ariaTextAreaflat_top__yB06Yt5Nhu.__wab_instance {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+}
+.TextAreaInput__ariaTextAreaflat_right__yB06YwGrx4.__wab_instance {
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+.TextAreaInput__ariaTextAreaflat_bottom__yB06YeAyJ4.__wab_instance {
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+.TextAreaInput__ariaTextAreaflat_left__yB06Yce1Xx.__wab_instance {
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+}
+.TextAreaInput__ariaTextAreapadded_left__yB06Ya6Efo.__wab_instance {
+  padding-left: var(--token-2_jb4RbyOyDV);
+}
+.TextAreaInput__ariaTextAreapadded_right__yB06Y8MYCy.__wab_instance {
+  padding-right: var(--token-2_jb4RbyOyDV);
+}

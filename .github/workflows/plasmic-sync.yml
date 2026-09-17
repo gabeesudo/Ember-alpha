@@ -1,0 +1,41 @@
+name: Sync Plasmic designs
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [plasmic]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Configure Plasmic authentication
+        env:
+          PLASMIC_AUTH_JSON: ${{ secrets.PLASMIC_AUTH_JSON }}
+        run: |
+          test -n "$PLASMIC_AUTH_JSON"
+          printf '%s' "$PLASMIC_AUTH_JSON" > .plasmic.auth
+      - run: npx plasmic sync --yes --skip-upgrade-check
+      - run: rm -f .plasmic.auth
+      - name: Commit generated Plasmic code
+        run: |
+          if git diff --quiet; then
+            echo "No Plasmic changes to commit."
+            exit 0
+          fi
+          git config user.name "plasmic-sync[bot]"
+          git config user.email "plasmic-sync[bot]@users.noreply.github.com"
+          git add plasmic.json plasmic.lock src/components src/routes
+          git commit -m "chore: sync Plasmic designs"
+          git push

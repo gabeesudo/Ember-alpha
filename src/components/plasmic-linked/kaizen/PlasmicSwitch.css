@@ -1,0 +1,80 @@
+.Switch__ariaSwitch__jIvlv.__wab_instance {
+  object-fit: cover;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  color: var(--token-0m05gj3N2eiL);
+  font-family: var(--token-KTY_WjyPLaCB);
+  font-size: var(--token-c6_OyUg6gWzv);
+  line-height: var(--token-RrsTQzwYD6Gx);
+  width: 100%;
+  flex-direction: column;
+  row-gap: var(--token-Sw5oQ-n44CSr);
+  min-width: 0;
+}
+.Switch__ariaSwitch__jIvlv[data-disabled][data-disabled].__wab_instance {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.Switch__ariaSwitch__jIvlv[data-readonly][data-readonly].__wab_instance {
+  pointer-events: none;
+  cursor: default;
+}
+.Switch__freeBox___67Wrg {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: var(--token-GXoVliIWq2sa);
+}
+.Switch__switchIndicator__m9946 {
+  height: auto;
+  width: var(--token-2_jb4RbyOyDV);
+  display: flex;
+  background: var(--token-go1qUNYjBjlW);
+  cursor: pointer;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 99px;
+  padding: var(--token-MdgXwPos-MDU);
+}
+.Switch__ariaSwitch__jIvlv[data-selected] .Switch__switchIndicator__m9946 {
+  background: var(--token-3hJejzQjhI5V);
+}
+.Switch__ariaSwitch__jIvlv[data-focus-visible] .Switch__switchIndicator__m9946 {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--token-3hJejzQjhI5V);
+  outline-offset: 1px;
+}
+.Switch__ariaSwitch__jIvlv[data-disabled] .Switch__switchIndicator__m9946 {
+  cursor: not-allowed;
+}
+.Switch__thumb__o9TTd {
+  display: flex;
+  position: relative;
+  width: var(--token-QGi-3LyMbmIb);
+  background: var(--token-BOdkXmlW41EE);
+  height: var(--token-QGi-3LyMbmIb);
+  flex-direction: row;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  transform: skew(0deg, 0deg);
+  box-shadow: 0px 0px 3px 0px #00000040;
+  flex-shrink: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.1s;
+  border-radius: 99px;
+}
+.Switch__ariaSwitch__jIvlv[data-selected] .Switch__thumb__o9TTd {
+  transform: translate3d(12px, 0px, 0px);
+}
+.Switch__description__k2922.__wab_instance.__wab_instance {
+  max-width: 100%;
+  position: relative;
+}

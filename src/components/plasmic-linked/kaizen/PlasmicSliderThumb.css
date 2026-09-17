@@ -1,0 +1,20 @@
+.SliderThumb__root__e8Xs1.__wab_instance {
+  position: relative;
+  background: var(--token-BOdkXmlW41EE);
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  height: var(--token-lnDkk1cY63Al);
+  width: var(--token-lnDkk1cY63Al);
+  border-radius: 99px;
+  border: 1px solid var(--token-3hJejzQjhI5V);
+}
+.SliderThumb__root__e8Xs1[data-hovered][data-hovered].__wab_instance {
+  border-width: 2px;
+}
+.SliderThumb__root__e8Xs1[data-focus-visible][data-focus-visible].__wab_instance {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--token-3hJejzQjhI5V);
+  outline-offset: 1px;
+}

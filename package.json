@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@plasmicapp/loader-react": "^2.0.23",
+    "@plasmicapp/react-web": "^1.0.39",
+    "@plasmicpkgs/react-aria": "^0.0.199",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -77,7 +80,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.2.0",
-    "drizzle-kit": "^0.31.10",
+    "drizzle-kit": "^0.18.1",
     "drizzle-orm": "^0.45.2",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.1",
@@ -95,5 +98,10 @@
   "version": "0.1.0-alpha",
   "engines": {
     "node": ">=22.16.0"
+  },
+  "allowScripts": {
+    "esbuild@0.15.18": true,
+    "esbuild@0.28.2": true,
+    "es5-ext@0.10.64": true
   }
 }
