@@ -26461,7 +26461,7 @@
           "projectId": "4WZ4je7EqYHVjfVVU6jztT",
           "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicHomepage.tsx",
           "importSpec": {
-            "modulePath": "../routes/plasmic-home.tsx"
+            "modulePath": "../routes/index.tsx"
           },
           "cssFilePath": "plasmic-linked/kaizen/PlasmicHomepage.css",
           "scheme": "blackbox",
@@ -26779,6 +26779,118 @@
           "cssFilePath": "plasmic-linked/kaizen/PlasmicTooltip.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "oOFWaMAoK3pv",
+          "name": "Dashboard",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicDashboard.tsx",
+          "importSpec": {
+            "modulePath": "../routes/plasmic-dashboard/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicDashboard.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/dashboard"
+        },
+        {
+          "id": "dfGaMssLc0LU",
+          "name": "HomeEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicHomeEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/home-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicHomeEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/home-editable"
+        },
+        {
+          "id": "wXLs4GbxfdxR",
+          "name": "DashboardEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicDashboardEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/dashboard-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicDashboardEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/dashboard-editable"
+        },
+        {
+          "id": "jCrkMHkNi70H",
+          "name": "LoginEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicLoginEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/login-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicLoginEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login-editable"
+        },
+        {
+          "id": "XqDLkPuFzm0v",
+          "name": "SignUpEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicSignUpEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/sign-up-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicSignUpEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/sign-up-editable"
+        },
+        {
+          "id": "tXrDjy_KeWj9",
+          "name": "MissionsEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicMissionsEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/missions-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicMissionsEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/missions-editable"
+        },
+        {
+          "id": "0RrN6SStEp_l",
+          "name": "CharacterEditable",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicCharacterEditable.tsx",
+          "importSpec": {
+            "modulePath": "../routes/character-editable/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicCharacterEditable.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/character-editable"
+        },
+        {
+          "id": "SAnHGD-LIu0q",
+          "name": "DashboardNative",
+          "type": "managed",
+          "projectId": "4WZ4je7EqYHVjfVVU6jztT",
+          "renderModuleFilePath": "plasmic-linked/kaizen/PlasmicDashboardNative.tsx",
+          "importSpec": {
+            "modulePath": "../routes/dashboard-native/index.tsx"
+          },
+          "cssFilePath": "plasmic-linked/kaizen/PlasmicDashboardNative.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/dashboard-native"
         }
       ],
       "icons": [
@@ -26806,6 +26918,111 @@
           "id": "l48MK-_rb7LS",
           "name": "TriangleFilledIcon",
           "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__TriangleFilled.tsx"
+        },
+        {
+          "id": "Q6LIljTDGuwN",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "yaKGkwJgSB1V",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "235GWjmNq59s",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon3.tsx"
+        },
+        {
+          "id": "KmtymGVLw9CD",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon4.tsx"
+        },
+        {
+          "id": "8ALoWP7arWhs",
+          "name": "Icon5Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon5.tsx"
+        },
+        {
+          "id": "aEDZt3I3qYYl",
+          "name": "Icon6Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon6.tsx"
+        },
+        {
+          "id": "iybnIkOsl3wa",
+          "name": "Icon7Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon7.tsx"
+        },
+        {
+          "id": "_2cuaWBmvFcR",
+          "name": "Icon8Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon8.tsx"
+        },
+        {
+          "id": "fV4t5LSkc9FE",
+          "name": "Icon9Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon9.tsx"
+        },
+        {
+          "id": "wRqpJ05bucAW",
+          "name": "Icon10Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon10.tsx"
+        },
+        {
+          "id": "zeNz7EhpmCSq",
+          "name": "Icon11Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon11.tsx"
+        },
+        {
+          "id": "rhtjnmYSt1lW",
+          "name": "Icon12Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon12.tsx"
+        },
+        {
+          "id": "uvSX11_Z7PlP",
+          "name": "Icon13Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon13.tsx"
+        },
+        {
+          "id": "r8q0tgTTW0eD",
+          "name": "Icon14Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon14.tsx"
+        },
+        {
+          "id": "WISTuE14inp0",
+          "name": "Icon15Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon15.tsx"
+        },
+        {
+          "id": "7JiDedkRJc4g",
+          "name": "Icon16Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon16.tsx"
+        },
+        {
+          "id": "3_L1WqO7XakF",
+          "name": "Icon17Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon17.tsx"
+        },
+        {
+          "id": "awCzEvYqdWMT",
+          "name": "Icon18Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon18.tsx"
+        },
+        {
+          "id": "Y4PQtKnj32wS",
+          "name": "Icon19Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon19.tsx"
+        },
+        {
+          "id": "BbQWTNKC26Ir",
+          "name": "Icon20Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon20.tsx"
+        },
+        {
+          "id": "7ug0X4lwJM2I",
+          "name": "Icon21Icon",
+          "moduleFilePath": "plasmic-linked/kaizen/icons/PlasmicIcon__Icon21.tsx"
         }
       ],
       "images": [],
@@ -26827,6 +27044,42 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "37Z_my1WZASO",
+          "name": "EmberDesktop",
+          "displayName": "EmberDesktop",
+          "componentImportPath": "src/components/plasmic-ember-components"
+        },
+        {
+          "id": "EKQGJh4nJa72",
+          "name": "EmberWindow",
+          "displayName": "EmberWindow",
+          "componentImportPath": "src/components/plasmic-ember-components"
+        },
+        {
+          "id": "6VxI8KEj-YCw",
+          "name": "EmberIcon",
+          "displayName": "EmberIcon",
+          "componentImportPath": "src/components/plasmic-ember-components"
+        },
+        {
+          "id": "C6caDsCirbmq",
+          "name": "EmberWarrior",
+          "displayName": "EmberWarrior",
+          "componentImportPath": "src/components/plasmic-ember-components"
+        },
+        {
+          "id": "NY3OG2tOhgqw",
+          "name": "EmberDashboardScreen",
+          "displayName": "EmberDashboardScreen",
+          "componentImportPath": "src/components/plasmic-screen-previews"
+        },
+        {
+          "id": "phrtrYH15sCM",
+          "name": "EmberLandingScreen",
+          "displayName": "EmberLandingScreen",
+          "componentImportPath": "src/components/plasmic-screen-previews"
         }
       ],
       "customFunctions": []

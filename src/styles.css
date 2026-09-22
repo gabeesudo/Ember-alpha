@@ -442,3 +442,16 @@ a.pocket-tile:hover {transform:translateY(-3px);}a.pocket-tile:active {transform
 .pocket-bottom {margin-top:30px;color:#5c6356;font-size:10px;}
 @media(max-width:760px){.pocket-workspace {padding:22px 18px;}.pocket-topline {font-size:9px;}.pocket-topline>span:last-child {font-size:8px;}.pocket-intro {margin:26px 0;}.pocket-stamp {width:57px;height:64px;flex-shrink:0;font-size:34px;}.pocket-stamp small {font-size:6px;}.pocket-stamp span {font-size:18px;}.pocket-layout {grid-template-columns:1fr;gap:26px;}.pocket-welcome-body {padding:24px;}.pocket-brand strong {font-size:38px;}.pocket-tile {min-height:210px;padding:18px 14px;}.pocket-tile>strong {font-size:23px;}.pocket-bottom {flex-direction:column;gap:8px;}.pocket-desktop .os-menu {padding:0 14px;gap:12px;}.pocket-desktop .os-version {font-size:9px;letter-spacing:0;}.pocket-desktop .os-edition,.pocket-desktop .menu-divider {display:none;}.pocket-desktop .os-status {font-size:9px;padding:12px;}.pocket-desktop .status-end {display:none;}}
 @media(max-width:360px){.pocket-workspace {padding:20px 12px;}.pocket-welcome-body {padding:18px;}.pocket-intro h1 {font-size:28px;}.pocket-stamp {display:none;}.pocket-tile>strong {font-size:20px;}.tile-note p {font-size:14px;}.pocket-start {font-size:16px;}.pocket-brand {gap:15px;}}
+/* Content and navigation inserted into the Plasmic-managed application shells. */
+.plasmic-app-content { width: 100%; min-width: 0; }
+.plasmic-app-nav { flex-wrap: wrap; gap: 12px 24px; }
+.plasmic-app-nav a, .plasmic-app-nav button {
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.plasmic-app-nav a:hover, .plasmic-app-nav button:hover { text-decoration: underline; }

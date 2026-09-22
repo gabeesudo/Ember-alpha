@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
 import { queryOptions } from "@tanstack/react-query";
+import { PlasmicAppPage } from "@/components/plasmic-app-page";
 
 const taskSchema = z.object({
   title: z.string().min(1, "Título é obrigatório").max(200),
@@ -128,7 +129,8 @@ function TasksPage() {
   const completedTasks = tasks.filter((t) => t.completed);
 
   return (
-    <div className="space-y-6 feature-page">
+    <PlasmicAppPage screen="tasks">
+      <div className="space-y-6 feature-page">
       <div className="feature-heading flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Missões</h1>
@@ -184,7 +186,8 @@ function TasksPage() {
 
       <TaskList title="Pendentes" tasks={pendingTasks} onComplete={handleComplete} onDelete={handleDelete} showActions />
       <TaskList title="Concluídas" tasks={completedTasks} onComplete={() => {}} onDelete={handleDelete} />
-    </div>
+      </div>
+    </PlasmicAppPage>
   );
 }
 

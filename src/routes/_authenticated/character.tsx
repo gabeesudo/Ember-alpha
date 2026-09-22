@@ -10,6 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
 import { queryOptions } from "@tanstack/react-query";
+import { PlasmicAppPage } from "@/components/plasmic-app-page";
 
 const profileQueryOptions = queryOptions({
   queryKey: ["my-profile"],
@@ -62,7 +63,8 @@ function CharacterPage() {
   }
 
   return (
-    <div className="space-y-6 feature-page">
+    <PlasmicAppPage screen="character">
+      <div className="space-y-6 feature-page">
       <div>
         <h1 className="text-2xl font-bold text-foreground">{profile.character_name}</h1>
         <p className="text-muted-foreground">Nível {profile.level} · {profile.xp}/{nextLevelXp} XP</p>
@@ -130,7 +132,8 @@ function CharacterPage() {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </PlasmicAppPage>
   );
 }
 

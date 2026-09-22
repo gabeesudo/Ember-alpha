@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { queryOptions, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { DashboardPanel } from "@/components/dashboard-panel";
+import { PlasmicAppPage } from "@/components/plasmic-app-page";
 import { getMyProfile } from "@/lib/profiles.functions";
 import { completeTask, createTask, getMyTasks } from "@/lib/tasks.functions";
 import type { NewQuest } from "@/lib/dashboard";
@@ -63,11 +64,13 @@ function DashboardPage() {
   }
 
   return (
-    <DashboardPanel
-      profile={profile}
-      quests={quests}
-      onComplete={handleComplete}
-      onCreate={handleCreate}
-    />
+    <PlasmicAppPage screen="dashboard">
+      <DashboardPanel
+        profile={profile}
+        quests={quests}
+        onComplete={handleComplete}
+        onCreate={handleCreate}
+      />
+    </PlasmicAppPage>
   );
 }

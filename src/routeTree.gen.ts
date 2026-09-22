@@ -13,9 +13,19 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as DesignRouteImport } from './routes/design'
+import { Route as PlasmicHomeRouteImport } from './routes/plasmic-home'
+import { Route as PlasmicHostRouteImport } from './routes/plasmic-host'
 import { Route as AuthenticatedCharacterRouteImport } from './routes/_authenticated/character'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedTasksRouteImport } from './routes/_authenticated/tasks'
+import { Route as CharacterEditableIndexRouteImport } from './routes/character-editable/index'
+import { Route as DashboardEditableIndexRouteImport } from './routes/dashboard-editable/index'
+import { Route as DashboardNativeIndexRouteImport } from './routes/dashboard-native/index'
+import { Route as HomeEditableIndexRouteImport } from './routes/home-editable/index'
+import { Route as LoginEditableIndexRouteImport } from './routes/login-editable/index'
+import { Route as MissionsEditableIndexRouteImport } from './routes/missions-editable/index'
+import { Route as PlasmicDashboardIndexRouteImport } from './routes/plasmic-dashboard/index'
+import { Route as SignUpEditableIndexRouteImport } from './routes/sign-up-editable/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,6 +46,16 @@ const DesignRoute = DesignRouteImport.update({
   path: '/design',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlasmicHomeRoute = PlasmicHomeRouteImport.update({
+  id: '/plasmic-home',
+  path: '/plasmic-home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlasmicHostRoute = PlasmicHostRouteImport.update({
+  id: '/plasmic-host',
+  path: '/plasmic-host',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedCharacterRoute = AuthenticatedCharacterRouteImport.update({
   id: '/character',
   path: '/character',
@@ -51,22 +71,82 @@ const AuthenticatedTasksRoute = AuthenticatedTasksRouteImport.update({
   path: '/tasks',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const CharacterEditableIndexRoute = CharacterEditableIndexRouteImport.update({
+  id: '/character-editable/',
+  path: '/character-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardEditableIndexRoute = DashboardEditableIndexRouteImport.update({
+  id: '/dashboard-editable/',
+  path: '/dashboard-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardNativeIndexRoute = DashboardNativeIndexRouteImport.update({
+  id: '/dashboard-native/',
+  path: '/dashboard-native/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeEditableIndexRoute = HomeEditableIndexRouteImport.update({
+  id: '/home-editable/',
+  path: '/home-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginEditableIndexRoute = LoginEditableIndexRouteImport.update({
+  id: '/login-editable/',
+  path: '/login-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissionsEditableIndexRoute = MissionsEditableIndexRouteImport.update({
+  id: '/missions-editable/',
+  path: '/missions-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlasmicDashboardIndexRoute = PlasmicDashboardIndexRouteImport.update({
+  id: '/plasmic-dashboard/',
+  path: '/plasmic-dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignUpEditableIndexRoute = SignUpEditableIndexRouteImport.update({
+  id: '/sign-up-editable/',
+  path: '/sign-up-editable/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/design': typeof DesignRoute
+  '/plasmic-home': typeof PlasmicHomeRoute
+  '/plasmic-host': typeof PlasmicHostRoute
   '/character': typeof AuthenticatedCharacterRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/tasks': typeof AuthenticatedTasksRoute
+  '/character-editable/': typeof CharacterEditableIndexRoute
+  '/dashboard-editable/': typeof DashboardEditableIndexRoute
+  '/dashboard-native/': typeof DashboardNativeIndexRoute
+  '/home-editable/': typeof HomeEditableIndexRoute
+  '/login-editable/': typeof LoginEditableIndexRoute
+  '/missions-editable/': typeof MissionsEditableIndexRoute
+  '/plasmic-dashboard/': typeof PlasmicDashboardIndexRoute
+  '/sign-up-editable/': typeof SignUpEditableIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/design': typeof DesignRoute
+  '/plasmic-home': typeof PlasmicHomeRoute
+  '/plasmic-host': typeof PlasmicHostRoute
   '/character': typeof AuthenticatedCharacterRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/tasks': typeof AuthenticatedTasksRoute
+  '/character-editable': typeof CharacterEditableIndexRoute
+  '/dashboard-editable': typeof DashboardEditableIndexRoute
+  '/dashboard-native': typeof DashboardNativeIndexRoute
+  '/home-editable': typeof HomeEditableIndexRoute
+  '/login-editable': typeof LoginEditableIndexRoute
+  '/missions-editable': typeof MissionsEditableIndexRoute
+  '/plasmic-dashboard': typeof PlasmicDashboardIndexRoute
+  '/sign-up-editable': typeof SignUpEditableIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -74,24 +154,76 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/design': typeof DesignRoute
+  '/plasmic-home': typeof PlasmicHomeRoute
+  '/plasmic-host': typeof PlasmicHostRoute
   '/_authenticated/character': typeof AuthenticatedCharacterRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/tasks': typeof AuthenticatedTasksRoute
+  '/character-editable/': typeof CharacterEditableIndexRoute
+  '/dashboard-editable/': typeof DashboardEditableIndexRoute
+  '/dashboard-native/': typeof DashboardNativeIndexRoute
+  '/home-editable/': typeof HomeEditableIndexRoute
+  '/login-editable/': typeof LoginEditableIndexRoute
+  '/missions-editable/': typeof MissionsEditableIndexRoute
+  '/plasmic-dashboard/': typeof PlasmicDashboardIndexRoute
+  '/sign-up-editable/': typeof SignUpEditableIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/design' | '/character' | '/dashboard' | '/tasks'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/design'
+    | '/plasmic-home'
+    | '/plasmic-host'
+    | '/character'
+    | '/dashboard'
+    | '/tasks'
+    | '/character-editable/'
+    | '/dashboard-editable/'
+    | '/dashboard-native/'
+    | '/home-editable/'
+    | '/login-editable/'
+    | '/missions-editable/'
+    | '/plasmic-dashboard/'
+    | '/sign-up-editable/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/design' | '/character' | '/dashboard' | '/tasks'
+  to:
+    | '/'
+    | '/auth'
+    | '/design'
+    | '/plasmic-home'
+    | '/plasmic-host'
+    | '/character'
+    | '/dashboard'
+    | '/tasks'
+    | '/character-editable'
+    | '/dashboard-editable'
+    | '/dashboard-native'
+    | '/home-editable'
+    | '/login-editable'
+    | '/missions-editable'
+    | '/plasmic-dashboard'
+    | '/sign-up-editable'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/auth'
     | '/design'
+    | '/plasmic-home'
+    | '/plasmic-host'
     | '/_authenticated/character'
     | '/_authenticated/dashboard'
     | '/_authenticated/tasks'
+    | '/character-editable/'
+    | '/dashboard-editable/'
+    | '/dashboard-native/'
+    | '/home-editable/'
+    | '/login-editable/'
+    | '/missions-editable/'
+    | '/plasmic-dashboard/'
+    | '/sign-up-editable/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,6 +231,16 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   DesignRoute: typeof DesignRoute
+  PlasmicHomeRoute: typeof PlasmicHomeRoute
+  PlasmicHostRoute: typeof PlasmicHostRoute
+  CharacterEditableIndexRoute: typeof CharacterEditableIndexRoute
+  DashboardEditableIndexRoute: typeof DashboardEditableIndexRoute
+  DashboardNativeIndexRoute: typeof DashboardNativeIndexRoute
+  HomeEditableIndexRoute: typeof HomeEditableIndexRoute
+  LoginEditableIndexRoute: typeof LoginEditableIndexRoute
+  MissionsEditableIndexRoute: typeof MissionsEditableIndexRoute
+  PlasmicDashboardIndexRoute: typeof PlasmicDashboardIndexRoute
+  SignUpEditableIndexRoute: typeof SignUpEditableIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -131,6 +273,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DesignRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/plasmic-home': {
+      id: '/plasmic-home'
+      path: '/plasmic-home'
+      fullPath: '/plasmic-home'
+      preLoaderRoute: typeof PlasmicHomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plasmic-host': {
+      id: '/plasmic-host'
+      path: '/plasmic-host'
+      fullPath: '/plasmic-host'
+      preLoaderRoute: typeof PlasmicHostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/character': {
       id: '/_authenticated/character'
       path: '/character'
@@ -151,6 +307,62 @@ declare module '@tanstack/react-router' {
       fullPath: '/tasks'
       preLoaderRoute: typeof AuthenticatedTasksRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/character-editable/': {
+      id: '/character-editable/'
+      path: '/character-editable'
+      fullPath: '/character-editable/'
+      preLoaderRoute: typeof CharacterEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard-editable/': {
+      id: '/dashboard-editable/'
+      path: '/dashboard-editable'
+      fullPath: '/dashboard-editable/'
+      preLoaderRoute: typeof DashboardEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard-native/': {
+      id: '/dashboard-native/'
+      path: '/dashboard-native'
+      fullPath: '/dashboard-native/'
+      preLoaderRoute: typeof DashboardNativeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-editable/': {
+      id: '/home-editable/'
+      path: '/home-editable'
+      fullPath: '/home-editable/'
+      preLoaderRoute: typeof HomeEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login-editable/': {
+      id: '/login-editable/'
+      path: '/login-editable'
+      fullPath: '/login-editable/'
+      preLoaderRoute: typeof LoginEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missions-editable/': {
+      id: '/missions-editable/'
+      path: '/missions-editable'
+      fullPath: '/missions-editable/'
+      preLoaderRoute: typeof MissionsEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plasmic-dashboard/': {
+      id: '/plasmic-dashboard/'
+      path: '/plasmic-dashboard'
+      fullPath: '/plasmic-dashboard/'
+      preLoaderRoute: typeof PlasmicDashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-up-editable/': {
+      id: '/sign-up-editable/'
+      path: '/sign-up-editable'
+      fullPath: '/sign-up-editable/'
+      preLoaderRoute: typeof SignUpEditableIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -175,6 +387,16 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   DesignRoute: DesignRoute,
+  PlasmicHomeRoute: PlasmicHomeRoute,
+  PlasmicHostRoute: PlasmicHostRoute,
+  CharacterEditableIndexRoute: CharacterEditableIndexRoute,
+  DashboardEditableIndexRoute: DashboardEditableIndexRoute,
+  DashboardNativeIndexRoute: DashboardNativeIndexRoute,
+  HomeEditableIndexRoute: HomeEditableIndexRoute,
+  LoginEditableIndexRoute: LoginEditableIndexRoute,
+  MissionsEditableIndexRoute: MissionsEditableIndexRoute,
+  PlasmicDashboardIndexRoute: PlasmicDashboardIndexRoute,
+  SignUpEditableIndexRoute: SignUpEditableIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,511 @@
+.DashboardNative__root__ueeHy {
+  display: grid;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-content: flex-start;
+  justify-items: center;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+}
+.DashboardNative__root__ueeHy > * {
+  grid-column: 4;
+}
+.DashboardNative__freeBox__wlUh4 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI";
+  color: rgb(39, 63, 56);
+  background: rgb(244, 243, 233);
+  min-height: 100vh;
+  width: 100%;
+}
+.DashboardNative__header__xa7I0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(232, 238, 229);
+  padding: 18px 32px;
+  border-bottom: 1px solid rgb(157, 177, 165);
+}
+.DashboardNative__strong__eL8V4 {
+  font-size: 24px;
+  font-weight: 800;
+  color: rgb(38, 84, 71);
+}
+.DashboardNative__nav__oJlPr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  column-gap: 24px;
+}
+.DashboardNative__link__jGqwl {
+  color: rgb(49, 95, 80);
+}
+.DashboardNative__link__xbQBs {
+  color: rgb(49, 95, 80);
+}
+.DashboardNative__link__sl8Iz {
+  color: rgb(49, 95, 80);
+}
+.DashboardNative__span___96Jz0 {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(49, 95, 80);
+}
+.DashboardNative__main__xNwz4 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1120px;
+  row-gap: 24px;
+  padding: 42px 24px;
+  margin: 0px auto;
+}
+.DashboardNative__freeBox__fiNI {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(122, 119, 94);
+}
+.DashboardNative__freeBox__sgaiJ {
+  display: flex;
+  flex-direction: column;
+}
+.DashboardNative__h1__qS0Hl {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 8px 0px 10px;
+}
+.DashboardNative__p__ostzV {
+  font-size: 16px;
+  color: rgb(109, 126, 116);
+  margin: 0px;
+}
+.DashboardNative__freeBox___7VJ7 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  row-gap: 22px;
+  column-gap: 22px;
+}
+.DashboardNative__section__ll2C {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 254, 248);
+  box-shadow: 0px 5px 16px 0px rgba(31, 62, 50, 0.07);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 330px;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid rgb(185, 199, 188);
+}
+.DashboardNative__freeBox__wZMrE {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+.DashboardNative__h2___0O3Is {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0px 0px 14px;
+}
+.DashboardNative__freeBox__xoLbY {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 18px;
+  column-gap: 18px;
+}
+.DashboardNative__freeBox__vA47 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 160px;
+  height: 180px;
+  background: rgb(219, 238, 224);
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 1px solid rgb(172, 202, 180);
+}
+.DashboardNative__span__skeZg {
+  position: absolute;
+  left: 8px;
+  bottom: 7px;
+  font-size: 10px;
+  color: rgb(43, 85, 70);
+}
+.DashboardNative__freeBox__a83V {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 170px;
+}
+.DashboardNative__freeBox__to6Tc {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(122, 119, 94);
+}
+.DashboardNative__h2___5MMn {
+  font-size: 27px;
+  margin: 4px 0px;
+}
+.DashboardNative__p__sbaK {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__freeBox__md746 {
+  display: flex;
+  flex-direction: column;
+  background: rgb(228, 238, 228);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+.DashboardNative__freeBox__q6F9W {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.DashboardNative__span__wdNgD {
+  background: rgb(237, 244, 237);
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__gOwva {
+  background: rgb(237, 244, 237);
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span___1EDyf {
+  background: rgb(237, 244, 237);
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__r68Wx {
+  background: rgb(237, 244, 237);
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__gVmnw {
+  background: rgb(237, 244, 237);
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__freeBox__ycKWs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  column-gap: 16px;
+}
+.DashboardNative__freeBox__pd5Vh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  column-gap: 16px;
+}
+.DashboardNative__freeBox__izuY {
+  display: flex;
+  flex-direction: column;
+  height: 12px;
+  background: rgb(216, 230, 220);
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.DashboardNative__freeBox__rOocE {
+  display: flex;
+  flex-direction: column;
+  width: 68%;
+  height: 12px;
+  background: rgb(85, 157, 120);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.DashboardNative__p__nEoE4 {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__section__kyZdO {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 254, 248);
+  box-shadow: 0px 5px 16px 0px rgba(31, 62, 50, 0.07);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 420px;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid rgb(185, 199, 188);
+}
+.DashboardNative__freeBox__c5UBq {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+.DashboardNative__h2__lVkma {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0px 0px 14px;
+}
+.DashboardNative__freeBox__oXv9W {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(122, 119, 94);
+}
+.DashboardNative__h2__nMyHb {
+  font-size: 27px;
+  margin: 10px 0px;
+}
+.DashboardNative__freeBox__liAjw {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+.DashboardNative__button__mBoza {
+  display: flex;
+  flex-direction: column;
+  background: rgb(49, 95, 80);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgb(40, 91, 75);
+}
+.DashboardNative__freeBox__buYu {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  column-gap: 8px;
+  margin: 18px 0px;
+}
+.DashboardNative__span__llYr {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__pfu4J {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__uxSyJ {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__er4Mm {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span___6KnZi {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span___3Z2YF {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__span__sT2Em {
+  background: rgb(231, 238, 229);
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.DashboardNative__freeBox__k4PgY {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+.DashboardNative__freeBox__qVp4R {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(251, 252, 247);
+  margin-top: 10px;
+  column-gap: 20px;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid rgb(213, 222, 211);
+}
+.DashboardNative__freeBox__fJaNe {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.DashboardNative__strong__i5DL {
+  font-size: 17px;
+}
+.DashboardNative__span__s9Loa {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__span__knyCt {
+  font-size: 12px;
+  color: rgb(164, 94, 57);
+}
+.DashboardNative__button__bclvT {
+  display: flex;
+  flex-direction: column;
+  background: rgb(49, 95, 80);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgb(40, 91, 75);
+}
+.DashboardNative__freeBox___4BwK9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(251, 252, 247);
+  margin-top: 10px;
+  column-gap: 20px;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid rgb(213, 222, 211);
+}
+.DashboardNative__freeBox__syWus {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.DashboardNative__strong__qsBf5 {
+  font-size: 17px;
+}
+.DashboardNative__span__lBvVg {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__span__csmYi {
+  font-size: 12px;
+  color: rgb(164, 94, 57);
+}
+.DashboardNative__button__zlEhW {
+  display: flex;
+  flex-direction: column;
+  background: rgb(49, 95, 80);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgb(40, 91, 75);
+}
+.DashboardNative__freeBox__rirK1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(251, 252, 247);
+  margin-top: 10px;
+  column-gap: 20px;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid rgb(213, 222, 211);
+}
+.DashboardNative__freeBox__vik6F {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.DashboardNative__strong__jW6Jc {
+  font-size: 17px;
+}
+.DashboardNative__span__sDieq {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__span__epA8K {
+  font-size: 12px;
+  color: rgb(164, 94, 57);
+}
+.DashboardNative__button__aBlmz {
+  display: flex;
+  flex-direction: column;
+  background: rgb(49, 95, 80);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgb(40, 91, 75);
+}
+.DashboardNative__p__geKtm {
+  font-size: 13px;
+  color: rgb(111, 129, 118);
+}
+.DashboardNative__freeBox__doLae {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(122, 119, 94);
+  text-align: center;
+}
+.DashboardNative__footer___5VBwr {
+  display: flex;
+  flex-direction: column;
+  color: rgb(111, 129, 118);
+  font-size: 12px;
+  padding: 18px 32px;
+  border-top: 1px solid rgb(205, 217, 207);
+}

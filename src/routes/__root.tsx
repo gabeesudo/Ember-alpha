@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { PlasmicRootProvider } from "@plasmicapp/react-web";
 
 import appCss from "../styles.css?url";
 
@@ -133,7 +134,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <PlasmicRootProvider>
+        <Outlet />
+      </PlasmicRootProvider>
       <Toaster />
     </QueryClientProvider>
   );

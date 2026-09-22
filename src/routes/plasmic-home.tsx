@@ -1,15 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageParamsProvider } from "@plasmicapp/react-web/lib/host";
-
 import {
   PlasmicHomepage,
   PlasmicHomepage__HeadOptions,
-} from "../components/plasmic-linked/kaizen/PlasmicHomepage";
+} from "@/components/plasmic-linked/kaizen/PlasmicHomepage";
 
-/**
- * Plasmic-managed page. The original Ember landing page remains at `/`;
- * this route gives the visual editor a safe page to iterate on.
- */
+/** Legacy code-component preview; the editable native landing page lives at `/`. */
 export const Route = createFileRoute("/plasmic-home")({
   head: () => ({
     meta: [...PlasmicHomepage__HeadOptions.meta],
@@ -20,11 +16,7 @@ export const Route = createFileRoute("/plasmic-home")({
 
 function PlasmicHomePage() {
   return (
-    <PageParamsProvider
-      route={Route.fullPath}
-      params={Route.useParams()}
-      query={Route.useSearch()}
-    >
+    <PageParamsProvider route={Route.fullPath} params={Route.useParams()} query={Route.useSearch()}>
       <PlasmicHomepage />
     </PageParamsProvider>
   );
